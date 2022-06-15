@@ -15,7 +15,13 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-
+    
+@bot.event
+async def on_message(message):
+    if message.author.bot:
+        return
+    if message.content=='/neko':
+        await messege.channel.send('にゃーん')
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
